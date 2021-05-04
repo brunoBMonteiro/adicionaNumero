@@ -1,21 +1,53 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import {
+    Text,  
+    SafeAreaView,
+    StatusBar,
+    TouchableOpacity,
+    StyleSheet,
+} from 'react-native';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+
+const App = () => {
+    return(
+        <SafeAreaView style={style.container}>
+                <Text style={style.number}>0</Text>
+                <TouchableOpacity style={style.button}>
+                    <Text style={style.textButton}>Adicionar número</Text>
+                </TouchableOpacity>
+
+                <StatusBar/>
+        </SafeAreaView>
+    );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+const style = StyleSheet.create({
+    container: {
+        backgroundColor: '#AAA',
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    number: {
+        fontSize: 50,
+        fontWeight: 'bold',
+        color: '#FF0000',
+    },
+    button: {
+        backgroundColor: '#FFFFFF',
+        width: '80%',
+        borderRadius: 5,
+        paddingHorizontal: 5,
+        paddingVertical: 10,
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginTop: 15,
+    },
+    textButton: {
+        fontWeight: 'bold',
+        fontSize: 18,
+    },
+
+})
+
+export default App;
