@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
     Text,  
     SafeAreaView,
@@ -7,13 +7,24 @@ import {
     StyleSheet,
 } from 'react-native';
 
-
 const App = () => {
+    
+    const [number, setNumber] = useState(0)
+
+    function handleNumber(){
+        const new_number = number + 1
+
+        setNumber(new_number)
+    }
+    
     return(
         <SafeAreaView style={style.container}>
-                <Text style={style.number}>0</Text>
-                <TouchableOpacity style={style.button}>
-                    <Text style={style.textButton}>Adicionar número</Text>
+                <Text style={style.number}>{number}</Text>
+                <TouchableOpacity 
+                    style={style.button}
+                    onPress={handleNumber}    
+                >
+                        <Text style={style.textButton}>Adicionar número</Text>
                 </TouchableOpacity>
 
                 <StatusBar/>
